@@ -12,6 +12,7 @@ variable "sqs_encryption" {}
 variable "ecr_encryption" {}
 variable "sns_encryption" {}
 variable "es_encryption" {}
+variable "msk_encryption" {}
 variable "key_usage" {}
 variable "cmk_spec" {}
 variable "deletion_window" {}
