@@ -45,3 +45,7 @@ output "sns_key_id" {
 output "es_key_id" {
 	value = aws_kms_key.es[*].arn
 }
+
+output "msk_key_id" {
+	value = aws_kms_key.msk[*].arn
+}
