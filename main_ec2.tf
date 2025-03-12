@@ -72,10 +72,25 @@ resource "aws_kms_alias" "ec2" {
 resource "aws_key_pair" "ec2" {
   count      = (var.ec2_encryption == true) ? 1 : 0
   key_name   = "${var.tenant}-${var.name}-ec2-keypair-${var.environment}"
-  public_key = var.public_key
+  public_key = var.default_public_key
   
   tags = {
     Name        = "${var.tenant}-${var.name}-ec2-keypair-${var.environment}"
+    Tenant      = var.tenant
+    Project     = var.name
+    Environment = var.environment
+    Maintainer  = "Magicorn"
+    Terraform   = "yes"
+  }
+}
+
+resource "aws_key_pair" "ec2_win" {
+  count      = (var.ec2_encryption == true) ? 1 : 0
+  key_name   = "${var.tenant}-${var.name}-ec2-win-keypair-${var.environment}"
+  public_key = var.windows_public_key
+  
+  tags = {
+    Name        = "${var.tenant}-${var.name}-ec2-winkeypair-${var.environment}"
     Tenant      = var.tenant
     Project     = var.name
     Environment = var.environment

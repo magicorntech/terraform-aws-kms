@@ -19,4 +19,5 @@ variable "deletion_window" {}
 variable "is_enabled" {}
 variable "enable_key_rotation" {}
 variable "multi_region" {}
-variable "public_key" {}
+variable "default_public_key" {}
+variable "windows_public_key" {}
