@@ -30,6 +30,10 @@ output "ec2_key_pair_name" {
 	value = aws_key_pair.ec2[*].key_name
 }
 
+output "ec2_win_key_pair_name" {
+	value = aws_key_pair.ec2_win[*].key_name
+}
+
 output "sqs_key_id" {
 	value = aws_kms_key.sqs[*].arn
 }

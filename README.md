@@ -5,7 +5,7 @@ Magicorn made Terraform Module for AWS Provider
 ```
 module "kms" {
   source      = "magicorntech/kms/aws"
-  version     = "0.2.0"
+  version     = "0.2.1"
   tenant      = var.tenant
   name        = var.name
   environment = var.environment
